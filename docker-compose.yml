@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  proyecto0:
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+  postgres:
+    image: postgres:9.6
+    container_name: postgres
+    environment:
+      POSTGRES_DB: 'proyecto0'
+      POSTGRES_USER: 'homestead'
+      POSTGRES_PASSWORD: 'secret'
