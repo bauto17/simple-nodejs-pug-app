@@ -3,7 +3,7 @@
       "driver": "pg",
       "user": "homestead",
       "password": "secret",
-      "host": "postgres",
+      "host": "localhost",
       "database": "proyecto0",
       "port": "5432"
     }

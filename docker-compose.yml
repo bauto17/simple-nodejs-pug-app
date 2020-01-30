@@ -1,17 +1,11 @@
 version: '3'
 
 services:
-  proyecto0:
-    build: .
-    depends_on:
-      - postgres
-    ports:
-      - "8080:8080"
-    volumes:
-      - .:/app
   postgres:
     image: postgres:9.6
-    container_name: postgres
+    container_name: postgres3
+    ports:
+      - 5432:5432
     environment:
       POSTGRES_DB: 'proyecto0'
       POSTGRES_USER: 'homestead'
