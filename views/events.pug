@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  script(src='/javascripts/events.js')
+  div
+    table#events
+      tr
+        th name
+        th category
+        th place
+        th address
+        th starts at
+        th ends at
+        th type
+        th 
+      each item in events
+        tr
+          td #{item.name}
+          td #{item.category}
+          td #{item.place}
+          td #{item.address}
+          td #{item.starts_at}
+          td #{item.ends_at}
+          td #{item.type}
+          td 
+            input(class='button greenbutton' type='button' value='detail' onClick="detail("+item.id+")")
+            
+  div
+    input(class='button bluebutton' type='button' value='create event' onClick='turnCreateEvent(true)')

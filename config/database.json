@@ -1,0 +1,10 @@
+{
+    "pg": {
+      "driver": "pg",
+      "user": "homestead",
+      "password": "secret",
+      "host": "localhost",
+      "database": "proyecto0",
+      "port": "54320"
+    }
+  }

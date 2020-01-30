@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  script(src='/javascripts/login.js')
+  h3= login
+  div
+    label username
+    input#username(type='text' name='username')
+  
+  div
+    label password
+    input#password(type='password' name='password')
+  div 
+    input(class='button greenbutton' type='button' value='send' onClick='login()')
+    input(class='button bluebutton' type='button' value='singup' onClick='goToSingUp()')

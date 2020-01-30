@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  script(src='/javascripts/singup.js')
+  h3= login
+  div
+    label username
+    input#username(type='text' name='username')
+  
+  div
+    label password
+    input#password(type='password' name='password')
+  div 
+    input(type='button' value='create' onClick='singup()')

@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  script(src='/javascripts/events.js')
+  div
+    if edit
+      div
+        label id
+        input#id(type='text'  disabled name='id' value=event.id)
+    div
+      label name
+      input#name(type='text'  disabled=edit name='name' value=event.name)
+    div
+      label category
+      select#category(disabled=edit name='category' value=event.category)
+        option(value="conference") conference
+        option(value="seminar") seminar
+        option(value="congress") congress
+        option(value="course") course
+    div
+      label place
+      input#place(type='text' disabled=edit name='place' value=event.place)
+    div
+      label address
+      input#address(type='text' disabled=edit name='address' value=event.address)
+    div
+      label starts_at
+      input#starts_at(type='date' disabled=edit name='starts_at' value=event.starts_at)
+    div
+      label ends_at
+      input#ends_at(type='date' disabled=edit name='ends_at' value=event.ends_at)
+    div
+      label type #{event.type}
+      select#type(disabled=edit name='type' value=event.type)
+        option(value="virtual") virtual
+        option(value="on-site") on-site
+    div 
+      if edit
+        input#editButton(class='button bluebutton' type='button' value='edit' onClick='editEvent()' )
+        input#saveButton(class='button bluebutton' type='button' style='display: none' value='save' onClick='saveEvent()')
+        input#deleteButton(class='button redbutton' type='button' value='delete' onClick='deleteEvent()')
+      if !edit
+        input#editButton(class='button bluebutton' type='button' value='create' onClick='postEvent()')
+      input#editButton(type='button' value='cancel' onClick='goToHome()')
+
